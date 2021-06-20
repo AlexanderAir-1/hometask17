@@ -1,0 +1,22 @@
+{
+  "name": "ht11_final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexanderAir-1/hometask17.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexanderAir-1/hometask17/issues"
+  },
+  "homepage": "https://github.com/AlexanderAir-1/hometask17#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.14"
+  }
+}

@@ -1,0 +1,767 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    --main-background-color: #4acaa8;
+    --secondary-background-color: #8b8b8b;
+    --headers-color: #777;
+    --main-text-color: #888;
+    --footer-text-color: #c0c0c0;
+    --side-text-color: #ffffff;
+    --side-icons-color: #b7eadc;
+    --side-text-color-italic: #d2f2e9;
+    --menu-lines: #5ccfb1;
+    --border-color: #f4f4f4;
+    --input-border: #e4e4e4;
+    --placeholder-color: #aaa;
+    --button-hover-color-1: #5ed0b1;
+    --button-hover-color-2: #a5a5a5;
+    --footer-color: #fafafa;
+    --footer-borders: #d4d4d4;
+    --footer-text-color: #c0c0c0;
+    --send-button-hover: #5ed0b1;
+    --reset-button-hover: #a5a5a5;
+}
+
+body, textarea, input {
+    font-family: 'Lato', sans-serif, Arial;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.capitalized {
+    text-transform: capitalize;
+}
+
+/* START Right fixed block */
+
+.fixed-side-block {
+    background-color: var(--main-background-color);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    max-width: 400px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    align-items: center;
+    text-align: center;
+}
+
+.fixed-side-block .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+.fixed-side-block .header .image-container img {
+    border-radius: 100%;
+    height: 150px;
+    margin-bottom: 40px;
+}    
+.fixed-side-block .header .main-header {
+    line-height: 35px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--side-text-color);
+}
+
+.fixed-side-block .header .header-text {
+    width: 90%;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 30px;
+    color: var(--side-text-color-italic);
+}
+
+.fixed-side-block .menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.fixed-side-block .menu .menu-button {
+    height: 60px;
+    font-size: 18px;
+}
+
+.fixed-side-block .menu .menu-button:not(:first-child) {
+    border-top: 1px solid var(--menu-lines);
+}
+
+.fixed-side-block .menu .menu-button a {
+    display: block;
+    color: var(--side-text-color);
+    padding: 20px 0px;
+}
+
+.fixed-side-block .menu .menu-button a:focus {
+    background-color: var(--side-text-color);
+    color: var(--main-background-color);
+}
+
+/* Start first button improvement */
+
+.fixed-side-block .menu .menu-button:first-child {
+    background-color: var(--side-text-color);
+}
+
+.fixed-side-block .menu .menu-button:first-child a {
+    color: var(--main-background-color);
+}
+
+/* End first button improvement */
+
+.fixed-side-block .footer {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fixed-side-block .footer .icons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.fixed-side-block .footer .icons-container .icon {
+    padding: 10px;
+}
+
+.fixed-side-block .footer .icons-container .icon i {
+    color: var(--side-icons-color);
+    font-size: 30px;
+    transition-property: color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+.fixed-side-block .footer .icons-container .icon i:hover {
+    color: var(--side-text-color);
+}
+
+/* FINISH Right fixed block */
+
+
+/* START main block */
+
+.main-block {
+    max-width: calc(100% - 400px);
+}
+
+/* banner */
+
+.main-block .banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 340px;
+    max-width: 100%;
+}
+.main-block .banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* banner */
+
+/* First text block */
+
+.main-block .text-container {
+    padding: 100px 20% 70px 20%;
+}
+
+.main-block .text-container:nth-child(3), .main-block .text-container:nth-child(4), .main-block .text-container:nth-child(5) {
+    border-top: solid 5px var(--border-color);
+}
+
+.main-block .text-container h1 {
+    color: var(--main-background-color);
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 60px;
+}
+
+.main-block .text-container h2 {
+    color: var(--headers-color);
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 45px;
+    width: 75%;
+}
+
+.main-block .text-container p {
+    color: var(--main-text-color);
+    margin-bottom: 35px;
+    line-height: 27px;
+    font-weight: 400;
+    font-size: 18px;
+}
+/* First text block */
+
+/*Second text block*/
+
+.main-block .text-container .pseudo-table {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-block .text-container .pseudo-table .pseudo-cell {
+    display: flex;
+    width: 49%;
+    padding-bottom: 20px;
+}
+
+.main-block .text-container .pseudo-table .pseudo-cell i {
+    color: var(--side-text-color);
+    font-weight: 400;
+    background: var(--main-background-color);
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 110%;
+    margin-right: 15px;
+}
+
+.main-block .text-container .pseudo-table .pseudo-cell p {
+    line-height: 40px;
+    margin: 0px;
+}
+/*Second text block*/
+
+/*Third text block*/
+
+.main-block .text-container .achievements .achievement {
+    display: flex;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+h3 {
+    color: var(--headers-color);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    margin-bottom: 25px;
+}
+
+.main-block .text-container .achievements .achievement a {
+    margin-right: 40px;
+    max-width: 49%;
+    min-width: 49%;
+}
+
+.main-block .text-container .achievements .achievement img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-block .text-container .achievements .achievement .achievement-description p {
+    margin: 0px;
+    min-width: 49%;
+}
+
+.main-block .text-container .achievements .achievement:not(:first-child) {
+    border-top: solid 2px var(--border-color);
+    padding-top: 50px;
+}
+/*Third text block*/
+
+/*Fourth text block*/
+
+.main-block .text-container .form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main-block .text-container .form > * {
+    padding-bottom: 30px;
+}
+
+.main-block .text-container .form .name {
+    width: 48%;
+}
+
+.main-block .text-container .form .email {
+    width: 48%;
+}
+
+.main-block .text-container .form .subject, .message {
+    width: 100%;
+}
+
+input {
+    border: 1px solid var(--input-border);
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    padding: 0px 15px 0px 15px;
+    line-height: 30px;
+    height: 45px;
+    color: var(--main-text-color);
+}
+
+textarea {
+    border: 1px solid var(--input-border);
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    padding: 15px;
+    line-height: 30px;
+    height: 200px;
+    color: var(--main-text-color);
+}
+
+input:focus, textarea:focus {
+    border: 1px solid var(--main-background-color);
+    outline: none;
+}
+
+textarea::-webkit-input-placeholder, input::-webkit-input-placeholder {
+    color: var(--placeholder-color);
+    font-family: Arial;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.main-block .text-container .form .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-block .text-container .form .buttons .button {
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--side-text-color);
+    padding: 0px 30px;
+    line-height: 45px;
+}
+
+.main-block .text-container .form .buttons .button:first-child {
+    background-color: var(--main-background-color);
+    transition: background-color 300ms ease-in-out;
+}
+
+.main-block .text-container .form .buttons .button:first-child:hover {
+    background-color: var(--send-button-hover);
+}
+
+.main-block .text-container .form .buttons .button:last-child {
+    background-color: var(--secondary-background-color);
+    margin-left: 25px;
+    transition: background-color 300ms ease-in-out;
+}
+
+.main-block .text-container .form .buttons .button:last-child:hover {
+    background-color: var(--reset-button-hover);
+}
+/*Fourth text block*/
+
+/* Footer */
+
+.main-block .footer {
+    background: var(--footer-color);
+    font-size: 13px;
+    color: var(--footer-text-color);
+    padding: 80px 25% 80px 25%;
+}
+
+.footer .links-list {
+    display: flex;
+}
+
+.footer .links-list .list-item:not(:first-child) {
+    border-left: 1px solid var(--footer-borders);
+    margin-left: 10px;
+    padding-left: 10px;
+}
+/* Footer */
+
+/* Links within main-block */
+
+.footer .links-list .list-item a, .main-block .text-container h2>a {
+    border-bottom: 1px dotted;
+    transition-property: color, border;
+    transition-duration: 200ms, 200ms;
+    transition-timing-function: ease-in-out, ease-in-out;
+}
+
+.footer .links-list .list-item a:hover, .main-block .text-container h2>a:hover {
+    border-bottom: 1px dotted transparent;
+    color: var(--main-background-color);
+}
+/* Links within main-block */
+
+
+.top-button {
+    visibility: hidden;
+}
+
+.topbar {
+    position: fixed;
+    top: -45px;
+    left: 0;
+    height: 45px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: black;
+    color: var(--side-text-color);
+    font-weight: 700;
+    width: 100%;
+    z-index: 1000;
+    font-size: 15px;
+}
+
+.topbar a {
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 1600px) {
+
+    .main-block {
+        max-width: calc(100% - 350px);
+    }
+    .main-block .banner {
+        height: 300px;
+    }
+    
+    /* Menu START*/
+    .fixed-side-block {
+        width: 350px;
+        max-width: 350px;
+    }
+    /* Menu END*/
+
+    /* First text block START */
+    .main-block .text-container {
+        padding: 100px 10% 70px 10%;
+        margin-right: 0px;
+    }
+    /* First text block END */
+}
+
+@media screen and (max-width: 900px) {
+    
+    /* Menu START*/
+    
+    .fixed-side-block {
+        right: -350px;
+        transition: right 500ms ease;
+        z-index:2000;
+    }
+
+    .topbar {
+        top: 0;
+    }
+
+    .top-button {
+        visibility: visible;
+        position: absolute;
+        right: 350px;
+        top: 0;
+        padding: 10px 10px;
+        height: 45px;
+        width: 60px;
+        background-color: var(--main-background-color);
+        color: var(--side-text-color);
+        z-index: 2001;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    [id='top-button'] {
+        position: absolute;
+        display: none;
+    }
+
+    [id='top-button']:checked ~ * {
+        transform: translateX(-350px);
+        transition: transform 500ms ease;
+    }
+
+    [id='top-button']:not(:checked) ~ * {
+        transition: transform 500ms ease;
+    }
+
+    /* Menu END*/
+
+    .main-block {
+        max-width: 100%;
+    }
+    /* Banner START */
+    .main-block .banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 365px;
+        max-width: 100%;
+    }
+    .main-block .banner img {
+        padding-top: 45px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    /* Banner END */
+
+    /* First text block START */
+
+    .main-block .text-container {
+        padding: 30px 5% 30px 5%;
+    }
+    
+    .main-block .text-container h1 {
+        font-size: 40px;
+        margin-bottom: 15px;
+        line-height: 40px;
+    }
+    
+    .main-block .text-container h2 {
+        margin-bottom: 35px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    
+    .main-block .text-container p {
+        margin-bottom: 10px;
+        line-height: 30px;
+        font-size: 15px;
+    }
+
+    /* First text block END */
+    
+    /* Second text block START */
+
+    .main-block .text-container .pseudo-table {
+        padding-top: 20px;
+    }
+
+    .main-block .text-container .pseudo-table .pseudo-cell {
+        width: 49%;
+        padding-bottom: 20px;
+    }
+    
+    /* Second text block END */
+
+    /* Third text block START */
+    
+    .main-block .text-container .achievements .achievement {
+        flex-direction: row;
+        margin-bottom: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .main-block .text-container .achievements .achievement a {
+        margin-right: 30px;
+        padding-top: 30px;
+        max-width: 49%;
+    }
+
+    .main-block .text-container .achievements .achievement .achievement-description {
+        min-width: 49%;
+    }
+  
+    .main-block .text-container .achievements .achievement .achievement-description h3 {
+        font-size: 18px;
+    }
+    
+    .main-block .text-container .achievements .achievement:not(:first-child) {
+        padding-top: 10px;
+    }
+    
+    /* Third text block END */
+
+    /* Fourth text block START */
+
+    .main-block .text-container .form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 25px;
+    }
+    
+    .main-block .text-container .form > * {
+        padding-bottom: 20px;
+        font-size: 16px;
+    }
+    
+    .main-block .text-container .form .name {
+        width: 49%;
+    }
+    
+    .main-block .text-container .form .email {
+        width: 49%;
+    }
+   
+    textarea {
+        height: 200px;
+    }
+    
+    input:focus, textarea:focus {
+        border: 2px solid var(--main-background-color);
+    }
+    
+    .main-block .text-container .form .buttons .button {
+        padding: 0px 20px;
+        line-height: 45px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    
+    .main-block .text-container .form .buttons .button:last-child {
+        margin-left: 15px;
+        margin-top: 0px;
+    }
+
+    /* Fourth text block END */
+
+    /* Footer */
+
+    .main-block .footer {
+        padding: 60px 5% 60px 5%;
+    }
+
+    /* Footer */
+
+}
+
+
+@media screen and (max-width: 600px) {
+    
+    /* Menu START*/
+    
+    .fixed-side-block {
+        width: 300px;
+        max-width: 300px;
+        right: -300px;
+    }
+
+    .top-button {
+        width: 45px;
+        right: 300px;
+    }
+
+    [id='top-button']:checked ~ * {
+        transform: translateX(-300px);
+    }
+
+    /* Banner START */
+    .main-block .banner {
+        height: 225px;
+    }
+    /* Banner END */
+
+    .main-block .text-container .pseudo-table .pseudo-cell {
+        width: 80%;
+        padding-bottom: 20px;
+    }
+    
+    /* Second text block END */
+
+    /* Third text block START */
+    
+    .main-block .text-container .achievements .achievement {
+        flex-direction: column;
+    }
+    
+    .main-block .text-container .achievements .achievement a {
+        padding-bottom: 30px;
+        margin-right: 0px;
+        min-width: 100%;
+    }
+    
+    .main-block .text-container .achievements .achievement a img {
+        width: 100%;
+    }
+
+    .main-block .text-container .achievements .achievement .achievement-description h3 {
+        font-size: 18px;
+    }
+    
+    .main-block .text-container .achievements .achievement .achievement-description p {
+        margin-bottom: 25px;
+    }
+    
+    .main-block .text-container .achievements .achievement:not(:first-child) {
+        padding-top: 10px;
+    }
+    
+    /* Third text block END */
+
+    /* Fourth text block START */
+    
+    .main-block .text-container .form .name {
+        width: 100%;
+    }
+    
+    .main-block .text-container .form .email {
+        width: 100%;
+    }
+   
+    textarea {
+        height: 150px;
+    }
+        
+    .main-block .text-container .form .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .main-block .text-container .form .buttons .button {
+        padding: 0px 0px;
+        min-width: 100%;
+    }
+    
+    .main-block .text-container .form .buttons .button:last-child {
+        margin-left: 0px;
+        margin-top: 15px;
+    }
+
+    /* Fourth text block END */
+
+    /* Footer */
+
+    .main-block .footer {
+        padding: 60px 5% 60px 5%;
+    }
+    
+    .footer .links-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .footer .links-list .list-item:not(:first-child) {
+        border-left: none;
+    }
+    .footer .links-list .list-item {
+        line-height: 30px;
+    }
+    /* Footer */
+
+}
